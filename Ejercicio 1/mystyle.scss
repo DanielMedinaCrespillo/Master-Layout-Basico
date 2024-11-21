@@ -1,0 +1,33 @@
+@use "sass:color" as *;
+@import "mixins";
+@import "paletas";
+
+.container-1 {
+  .base-color {
+    background-color: $color-red;
+    color: $color-white;
+  }
+  @include generar-oscuros($color-red, 4);
+  @include generar-claros($color-red, 4);
+  @include display-borde-divs();
+}
+
+.container-2 {
+  .base-color {
+    background-color: $color-blue;
+    color: $color-white;
+  }
+  @include generar-oscuros($color-blue, 4);
+  @include generar-claros($color-blue, 4);
+  @include display-borde-divs();
+}
+
+.container-3 {
+  .base-color {
+    background-color: $color-green;
+    color: $color-white;
+  }
+  @include generar-oscuros($color-green, 4);
+  @include generar-claros($color-green, 4);
+  @include display-borde-divs();
+}

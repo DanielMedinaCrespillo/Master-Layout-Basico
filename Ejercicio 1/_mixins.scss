@@ -1,0 +1,31 @@
+@mixin display-borde-divs() {
+  display: flex;
+  gap: 4px;
+  margin: 4px;
+  justify-content: center;
+  align-items: center;
+  div {
+    border-radius: 8px;
+    padding: 16px;
+  }
+}
+
+@mixin generar-oscuros($color, $steps) {
+  @for $i from 1 through $steps {
+    .darken-#{$i} {
+      $dark-color: scale($color, $lightness: -($i * 15%));
+      background-color: $dark-color;
+      color: complement($dark-color);
+    }
+  }
+}
+
+@mixin generar-claros($color, $steps) {
+  @for $i from 1 through $steps {
+    .lighten-#{$i} {
+      $light-color: scale($color, $lightness: $i * 15%);
+      background-color: $light-color;
+      color: complement($light-color);
+    }
+  }
+}
